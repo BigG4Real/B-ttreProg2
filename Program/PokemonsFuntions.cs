@@ -4,18 +4,18 @@ namespace PokemonsFunktions
 {
     public abstract class Pokemon : IDamageble
     {
-        public string pokemonName;
-        public float pokemonHealth;
-        protected float pokemonDmg;
+        public string Name { get; protected set; }
+        public float Health { get; protected set; }
+        protected float Dmg;
 
         //Contstruktur
         public Pokemon()
         {
-            pokemonName = TypeString("What should the pokemon name be?");
+            Name = TypeString("What should the pokemon name be?");
             Console.Clear();
-            pokemonHealth = TypeInt($"What health do you want your {pokemonName} to have?", 1, int.MaxValue);
+            Health = TypeInt($"What health do you want your {Name} to have?", 1, int.MaxValue);
             Console.Clear();
-            pokemonDmg = TypeInt($"What damge should your {pokemonName} have?", 1, int.MaxValue);
+            Dmg = TypeInt($"What damge should your {Name} have?", 1, int.MaxValue);
             Console.Clear();
             return;
         }
@@ -23,7 +23,7 @@ namespace PokemonsFunktions
         #region Interface
         public virtual void Change(float amount)
         {
-            pokemonHealth += amount;
+            Health += amount;
             return;
         }
         public void ChangeHp(IDamageble target, float amount)

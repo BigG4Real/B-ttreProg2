@@ -18,14 +18,14 @@ namespace Trainer
         /// </summary>
         public void WhatToDo()
         {
-            int option = TypeInt($"What do you want your {pokemonName} to do / yourself?\n1 = deal dmg\n2 = heal for 50 hp\n3 = dmg all for 20\n4 = heal all for 30", 1, 4);
+            int option = TypeInt($"What do you want your {Name} to do / yourself?\n1 = deal dmg\n2 = heal for 50 hp\n3 = dmg all for 20\n4 = heal all for 30", 1, 4);
             float healSingleAmount = 50;
             float healAllAmount = 30;
             float dmgAllAmount = 20;
             Console.Clear();
             if (option == 1)
             {
-                WhoToChangeHP("hit", pokemonDmg * -1);
+                WhoToChangeHP("hit", Dmg * -1);
             }
             else if (option == 2)
             {
@@ -69,7 +69,7 @@ namespace Trainer
             for (int i = 0; i < allTrainers.Count; i++)
             {
                 int id = i + 1;
-                Console.WriteLine($"Pokemon {allTrainers[i].pokemonName}:\nHealth = {allTrainers[i].pokemonHealth}\nDamge = {allTrainers[i].pokemonDmg}\nID = {id}\n");
+                Console.WriteLine($"Pokemon {allTrainers[i].Name}:\nHealth = {allTrainers[i].Health}\nDamge = {allTrainers[i].Dmg}\nID = {id}\n");
             }
             return;
         }

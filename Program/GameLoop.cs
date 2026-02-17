@@ -16,7 +16,7 @@ public class GameLoop
             int oder = 0;
             while (trainers.Count > 1)
             {
-                WhoIsGoingToFight(trainers[oder].pokemonName);
+                WhoIsGoingToFight(trainers[oder].Name);
                 trainers[oder].WhatToDo();
                 RemoveDeadOnes();
 
@@ -28,7 +28,7 @@ public class GameLoop
                         oder = 0;
                     }
                 }
-                while (trainers[oder].pokemonHealth > 0);
+                while (trainers[oder].Health > 0);
             }
             return;
         }
@@ -55,7 +55,7 @@ public class GameLoop
         {
             for (int i = 0; i < trainers.Count; i++)
             {
-                if (trainers[i].pokemonHealth <= 0)
+                if (trainers[i].Health <= 0)
                 {
                     trainers.Remove(trainers[i]);                
                 }
